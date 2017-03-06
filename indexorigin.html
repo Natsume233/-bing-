@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="box">
+        <div class="bg-div">
+            <div class="search-box">
+                <div class="logo"></div>
+                <form action="" id="search_form">
+                    <input type="text" class="search-input-text" id="search_input">
+                    <input type="button" class="search-input-button">
+                </form>
+
+            </div>
+        </div>
+        <div class="suggest" id="search_suggest" style="display:none">
+            <ul id="list">
+            </ul>
+        </div>
+
+    </div>
+<script type="application/javascript" src="js/indexorigin.js"></script>
+<script>
+    function cbFun(d) {
+        var html = '';
+        for(var i = 0; i<d.s.length; i++){
+            html+='<li>'+ d.s[i] +'</li>';
+        }
+        getDOM('list').innerHTML = html;
+        var dom_search_suggest = getDOM('search_suggest');
+        dom_search_suggest.style.top = getElementTop(getDOM('search_form'))+45+'px';
+        dom_search_suggest.style.left = getElementLeft(getDOM('search_form'))+'px';
+        dom_search_suggest.style.position = 'absolute';
+        dom_search_suggest.style.display = 'block';
+    }
+    <!-- 事件绑定 -->
+    addEvent('search_input','keyup',function () {
+        console.log('123');
+        var searchText = getDOM('search_input').value;
+        if(searchText !== ''){
+            var script = document.createElement('script');
+            script.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?json=1&cb=cbFun&wd='+ searchText +'';
+            document.body.appendChild(script);
+        }else {
+            getDOM('list').style.display = 'none';
+        }
+    });
+    /*事件代理*/
+    delegateEvent('li','click',function () {
+        var keyword = this.innerHTML;
+        location.href = 'https://www.baidu.com/s?wd='+keyWord;
+    })
+</script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

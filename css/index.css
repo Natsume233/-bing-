@@ -1,0 +1,80 @@
+body{
+    background-color: #333;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.box{
+    /*后期需调整的地方*/
+    width: 1352px;
+    height: 690px;
+    /*position: relative;*/
+}
+.bg-div{
+    width: 100%;
+    height: 100%;
+    margin: -80px auto;
+    background: url('../images/bingbg.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.search-box {
+    width: 1028px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+.logo{
+    width: 107px;
+    height: 53px;
+    margin: -4px 18px;
+    background-image: url('../images/bingSearch.png');
+    float: left;
+}
+form{
+    float: left;
+    background-color: #fff;
+    height: 45px;
+}
+.search-input-text{
+    float: left;
+    width: 491px;
+    line-height: 31px;
+    margin: 6px 9px;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+}
+.search-input-button{
+    float: left;
+    width: 45px;
+    height: 45px;
+    border: 8px solid #0c8484;
+    background: #0c8484 url("../images/bingSearBtn.png") no-repeat;
+    background-position: -169px -63px;
+}
+.suggest{
+    /*position: absolute;*/
+    /*top: 183px;*/
+    /*left:250px;*/
+    width: 554px;
+    background-color: #fff;
+    border: 1px solid #999;
+    height: 224px;
+    overflow: hidden;
+}
+.suggest ul li{
+    padding: 3px;
+    font-size: 14px;
+    line-height: 25px;
+    cursor: pointer;
+}
+.suggest ul li:hover{
+    text-decoration: underline;
+    background-color: #e5e5e5;
+}
